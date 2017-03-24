@@ -7,7 +7,17 @@ body, html {
   height: 100%;
 }
 
+h1 {
+  line-height: 35px;
+}
 
+h1>a {
+  border-bottom: none;
+}
+
+p>.spacing {
+  line-height: 25px;
+}
 
 .wrapper {
   box-sizing: border-box; height: 100%; overflow: auto;
@@ -61,7 +71,9 @@ p {
   margin: 0 auto;
   width: 700px;
   padding: 120px 12px 50px;
-  overflow: auto;}
+  overflow: auto;
+}
+
 article {
   padding: 75px;
 }
@@ -76,25 +88,135 @@ hr {
   border-bottom: 3px solid #0068FF;
 }
 
-.large-screen {
-  display: block;
+button {
+    background-color: #999999; /*  */
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: Montserrat, Helvetica Neue, sans-serif;
 }
 
-.small-screen {
-  display: none;
+button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 
 
+/* Material Design-esque input fields from this codepen - https://codepen.io/sevilayha/pen/IdGKH */
 
+* { box-sizing:border-box; }
 
+/* basic stylings ------------------------------------------ */
 
-/*.meta {text-transform: uppercase; font-family: Arial, Courier New, Source Sans Pro, sans-serif; font-size: 10px; letter-spacing: .15em;}
-.meta a:hover {color: #333;}
+h2 		 {
+  text-align:center;
+  margin-bottom:50px;
+}
+h2 small {
+  font-weight:normal;
+  color:#888;
+  display:block;
+}
+.footer 	{ text-align:center; }
+.footer a  { color:#53B2C8; }
 
-.inline-list {list-style: none; margin: 0; padding: 0;}
-.inline-list li {display: inline-block;}*/
+/* form starting stylings ------------------------------- */
+.group 			  {
+  position:relative;
+  margin-bottom:45px;
+}
+input 				{
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:300px;
+  height: 150px;
+  border:none;
+  background: transparent;
+  border-bottom:1px solid #757575;
+}
+input:focus 		{ outline:none; }
 
-/*footer .inline-list li {margin-right: 40px;}
-footer a {border: none; color: #0068FF;}
-footer {margin: 0 auto; position: absolute; bottom: 55%; right: -255px; padding: 40px 0 0 0; width: 600px; -webkit-transform: rotate(-90deg);}*/
+/* LABEL ======================================= */
+label 				 {
+  color:#999;
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label 		{
+  top:-20px;
+  font-size:14px;
+  color:#5264AE;
+}
+
+/* BOTTOM BARS ================================= */
+.bar 	{ position:relative; display:block; width:300px; }
+.bar:before, .bar:after 	{
+  content:'';
+  height:2px;
+  width:0;
+  bottom:1px;
+  position:absolute;
+  background:#5264AE;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%;
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position:absolute;
+  height:60%;
+  width:100px;
+  top:25%;
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+
+/* Button Styling */

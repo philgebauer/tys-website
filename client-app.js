@@ -8,15 +8,15 @@ app.config(['$routeProvider', function($routeProvider) {
       controller: 'HomeController',
       controllerAs: 'home'
     })
+    .when('/resume', {
+      templateUrl: '/views/resume.html',
+      controller: 'ResumeController',
+      controllerAs: 'resume'
+    })
     .when('/contact', {
-      templateUrl: '../public/views/contact.html',
+      templateUrl: '/views/contact.html',
       controller: 'ContactController',
       controllerAs: 'contact'
-    })
-    .when('/classes', {
-      templateUrl: '../public/views/classes.html',
-      controller: 'ClassesController',
-      controllerAs: 'classes'
     })
     .otherwise({
       redirectTo: '/home'
